@@ -1,0 +1,18 @@
+# This is a comment in YAML
+
+# Key-Value Pairs
+name: John Doe
+age: 30
+city: New York
+
+# Lists
+hobbies:
+  - Reading
+  - Hiking
+  - Swimming
+
+# Nested Structures
+address:
+  street: 123 Main St
+  city: Springfield
+  postal_code: 12345
