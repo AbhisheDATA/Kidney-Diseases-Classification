@@ -1,18 +1,8 @@
-# This is a comment in YAML
-
-# Key-Value Pairs
-name: John Doe
-age: 30
-city: New York
-
-# Lists
-hobbies:
-  - Reading
-  - Hiking
-  - Swimming
-
-# Nested Structures
-address:
-  street: 123 Main St
-  city: Springfield
-  postal_code: 12345
+AUGMENTATION: True
+IMAGE_SIZE: [224, 224, 3] # as per VGG 16 model
+BATCH_SIZE: 16
+INCLUDE_TOP: False
+EPOCHS: 50
+CLASSES: 4
+WEIGHTS: imagenet
+LEARNING_RATE: 0.01
