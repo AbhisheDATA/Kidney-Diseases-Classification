@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Public/Documents/Project/Kidney-Diseases-Classification/mlruns/809115420427519618/139bf9f5837f46a99108343e88ca3108/artifacts
+end_time: 1697526129224
+entry_point_name: ''
+experiment_id: '809115420427519618'
+lifecycle_stage: active
+run_id: 139bf9f5837f46a99108343e88ca3108
+run_name: defiant-goat-70
+run_uuid: 139bf9f5837f46a99108343e88ca3108
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1697526122560
+status: 3
+tags: []
+user_id: abhis

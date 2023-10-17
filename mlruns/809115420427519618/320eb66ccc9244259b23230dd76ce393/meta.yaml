@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Public/Documents/Project/Kidney-Diseases-Classification/mlruns/809115420427519618/320eb66ccc9244259b23230dd76ce393/artifacts
+end_time: 1697525851119
+entry_point_name: ''
+experiment_id: '809115420427519618'
+lifecycle_stage: active
+run_id: 320eb66ccc9244259b23230dd76ce393
+run_name: mercurial-auk-776
+run_uuid: 320eb66ccc9244259b23230dd76ce393
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1697525844261
+status: 3
+tags: []
+user_id: abhis
