@@ -13,7 +13,7 @@ class PrepareBaseModel:
 
     
     def get_base_model(self):
-        self.model = tf.keras.applications.vgg16.VGG16(
+        self.model = tf.keras.applications.InceptionV3(
             input_shape=self.config.params_image_size,
             weights=self.config.params_weights,
             include_top=self.config.params_include_top
@@ -32,19 +32,23 @@ class PrepareBaseModel:
             for layer in model.layers[:-freeze_till]:
                 model.trainable = False
 
-        flatten_in = tf.keras.layers.Flatten()(model.output)
-        prediction = tf.keras.layers.Dense(
-            units=classes,
-            activation="softmax"
-        )(flatten_in)
+        # Add custom top layers for classification
+        top_model = Flatten()(model.output)
+        top_model = Dense(512, activation='relu')(top_model)
+        top_model = Dropout(0.1)(top_model)
+        top_model = Dense(256, activation='relu')(top_model)
+        top_model = Dropout(0.05)(top_model)
+        top_model = Dense(128, activation='relu')(top_model)
+        top_model = Dropout(0.05)(top_model)
+        top_model = Dense(4, activation='softmax')(top_model)
 
         full_model = tf.keras.models.Model(
             inputs=model.input,
-            outputs=prediction
+            outputs=top_model
         )
 
         full_model.compile(
-            optimizer=tf.keras.optimizers.SGD(learning_rate=learning_rate),
+            optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate),
             loss=tf.keras.losses.CategoricalCrossentropy(),
             metrics=["accuracy"]
         )

@@ -4,6 +4,8 @@ import gdown
 from kidney_diseases_classification import logger
 from kidney_diseases_classification.entity.config_entity import DataIngestionConfig
 from kidney_diseases_classification.utils.common import get_size
+import splitfolders
+from pathlib import Path 
 
 class DataIngestion:
     def __init__(self, config: DataIngestionConfig):
@@ -42,3 +44,16 @@ class DataIngestion:
         os.makedirs(unzip_path, exist_ok=True)
         with zipfile.ZipFile(self.config.local_data_file, 'r') as zip_ref:
             zip_ref.extractall(unzip_path)
+
+    def split_folder(self):
+        """
+        split_folder_path: str
+        split the dataset in train test val
+        Function returns None
+        """
+        split_path=self.config.root_dir
+        os.makedirs(split_path, exist_ok=True)
+        pa = os.getcwd()
+        full_path = os.path.join(pa,self.config.root_dir, self.config.data_dir)
+        full_path = Path(full_path)
+        splitfolders.ratio(full_path,output=self.config.split_dir,seed=7,ratio=(0.8,0.1, 0.1))
