@@ -17,4 +17,5 @@ Flask
 Flask-Cors
 gdown
 opencv-python
+split-folders
 -e .
