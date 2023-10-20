@@ -163,3 +163,4 @@ artifacts/*
 
 ML-flow-config.txt
 
+templates/home.html
