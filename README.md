@@ -37,8 +37,14 @@ conda activate kidney
 ```bash
 pip install -r requirements.txt
 ```
-
-
+### STEP 03 -Download the trained model and create a new folder in project driectory named "model" and paste under that folder
+```bash
+https://drive.google.com/file/d/1MVuQ2PPj7CTm7_LQ9TpWI4Y7NPrT97Ft/view?usp=sharing
+```
+### STEP 04-change the path for load model in directory src/kidney_diseases_classification/pipeline/prediction.py
+```bash
+ model = load_model(os.path.join("model", "model.h5"))
+```
 ```bash
 # Finally run the following command
 python app.py
